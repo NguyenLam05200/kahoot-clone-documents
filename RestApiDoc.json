@@ -1,0 +1,148 @@
+# SIGN UP
+POST 157.245.147.239:8080/v1/user/register
+{
+    "email": "dinguyen",
+    "password": "test",
+    "name": "",
+}
+
+# SIGN IN
+POST 157.245.147.239:8080/v1/user/authenticate
+{
+    "email": "dinguyen",
+    "password": "test"
+}
+
+# GET QUIZ
+GET 157.245.147.239:9090/v1/api/admin/quiz/62b8132f02831715a9fbaa7a
+// Vi' Du. response
+{
+    "_id": "62b8132f02831715a9fbaa7a",
+    "quizImage": "path/to/image",
+    "questions": {
+        "1": {
+            "text": "Super saiyan Dinh nhuyen 2222",
+            "img": "some img url",
+            "time": 60,
+            "ans": {
+                "1": {
+                    "text": "da!!!!",
+                    "isRight": true
+                },
+                "2": {
+                    "text": "da",
+                    "isRight": false
+                }
+            }
+        },
+        "2": {
+            "text": "Super saiyan",
+            "img": "some img url",
+            "time": 60,
+            "ans": {
+                "1": {
+                    "text": "da!!!",
+                    "isRight": true
+                },
+                "2": {
+                    "text": "net",
+                    "isRight": false
+                }
+            }
+        }
+    }
+}
+
+# CREATE QUIZ 
+POST 157.245.147.239:9090/v1/api/admin/quiz
+
+Bear "<token>"
+Request:
+{
+    "quizImage": "path/to/image",
+    "questions": {
+        "1": {
+            "text": "Super saiyan Dinh nhuyen 2222",
+            "img": "some img url",
+            "time": 60,
+            "ans": {
+                "1": {
+                    "text": "da!!!!",
+                    "isRight": true
+                },
+                "2": {
+                    "text": "da",
+                    "isRight": false
+                }
+            }
+        },
+        "2": {
+            "text": "Super saiyan",
+            "img": "some img url",
+            "time": 60,
+            "ans": {
+                "1": {
+                    "text": "da!!!",
+                    "isRight": true
+                },
+                "2": {
+                    "text": "net",
+                    "isRight": false
+                }
+            }
+        }
+    }
+}
+
+Response:
+{
+    "id" : "1231232"
+}
+
+# UPDATE QUIZ
+POST 157.245.147.239:9090/v1/api/admin/quiz
+
+Bear "<token>"
+Request:
+{
+    "_id": "id" // Luy y, nho them id de Update
+    "quizImage": "path/to/image",
+    "questions": {
+        "1": {
+            "text": "Super saiyan Dinh nhuyen 2222",
+            "img": "some img url",
+            "time": 60,
+            "ans": {
+                "1": {
+                    "text": "da!!!!",
+                    "isRight": true
+                },
+                "2": {
+                    "text": "da",
+                    "isRight": false
+                }
+            }
+        },
+        "2": {
+            "text": "Super saiyan",
+            "img": "some img url",
+            "time": 60,
+            "ans": {
+                "1": {
+                    "text": "da!!!",
+                    "isRight": true
+                },
+                "2": {
+                    "text": "net",
+                    "isRight": false
+                }
+            }
+        }
+    }
+}
+
+
+Response:
+{
+    "id" : "null"
+}

@@ -1,0 +1,139 @@
+User
+HOst
+
+========= Websocket ==========
+Host: 1 Create PIN (Room_Id)
+
+User1: "join_room": 
+{
+    "room_id": "abc"
+}
+
+User2: "join_room": 
+{
+    "room_id": "abc"
+}
+
+User3: "join_room": 
+{
+    "room_id": "abc"
+}
+
+======= Call API get List Question[] ======== 
+/*
+    "questions": {
+        "1": {
+            "text": "Super saiyan Dinh nhuyen",
+            "img": "some img url",
+            "time": 60,
+            "ans": {
+                "1": {
+                    "text": "da!!!!",
+                    "isRight": true
+                },
+                "2": {
+                    "text": "da",
+                    "isRight": false
+                }
+            }
+        },
+        "2": {
+            "text": "Super saiyan",
+            "img": "some img url",
+            "time": 60,
+            "ans": {
+                "1": {
+                    "text": "da!!!",
+                    "isRight": true
+                },
+                "2": {
+                    "text": "net",
+                    "isRight": false
+                }
+            }
+        }
+    }
+*/
+Host phai luu 1 bien: questionIndex; 
+Host: "start_room": {
+    "room_id": "abc" // may 1 host co' nhieu room
+}
+
+// Host gui event broadcast_question
+Host: "broadcast_question": {
+        question: {
+            "text": "Super saiyan Dinh nhuyen",
+            "img": "some img url",
+            "time": 60,
+            "ans": {
+                "1": {
+                    "text": "da!!!!",
+                    "isRight": true
+                },
+                "2": {
+                    "text": "da",
+                    "isRight": false
+                }
+            }
+        },
+}
+
+// User nhan dc event
+User: "receive_question": {
+        question: {
+            "id": 1,
+            "text": "Super saiyan Dinh nhuyen",
+            "img": "some img url",
+            "time": 60, // thoi gian toi da cho 1 cau hoi
+            "start_time": 1656259347, // epoch timestamp
+            "ans": {
+                "1": {
+                    "text": "da!!!!",
+                    // "isRight": true // Bo qua field nay
+                },
+                "2": {
+                    "text": "da",
+                    // "isRight": false // Bo qua field nay
+                }
+            }
+        }
+}
+
+
+== Khi User nhan dc 1 question:
+User: {
+    "answer" {
+        "questionId": 1,
+        "answer": "id"
+        "time_stamp: 1656259347 // epoch timestamp
+    }
+}
+
+== Khi 1 questoin Het thoi gian: 
+Server: { 
+    "board": { //  Quesion da het thoi gian + BXH
+        "user1": point
+        "user2": point
+    }
+    "lastQuestionIdx": 1, //  => host start cau hoi tiep theo, vd: "question: 2"
+    "yourScore": 1000,
+    "yourRank": 1
+}
+
+===== LOOP =======
+
+Khi ma Host nhan "lastQuestionIdx" == tlastQuestionIdx => Host (front-end) show BXH.
+Host: {
+    "end_game": {
+        
+    }
+}
+
+======== Luu Y ========
+Có 1 event đặc biệt
+cho cả Host và User
+"error": {
+    {
+        "message": "Something went wrong"
+    }
+}
