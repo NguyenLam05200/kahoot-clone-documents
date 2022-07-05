@@ -165,3 +165,55 @@ Response:
 {
     "id" : "null"
 }
+
+
+# GET ALL QUIZ By USER
+GET 157.245.147.239:9090/v1/api/admin/quiz-all
+request: 
+response: 
+{
+    "quizzes": [
+        {
+            "_id": "62b8132f02831715a9fbaa7a", // nho them _id de update
+            "quizImage": "path/to/image",
+            "questions": [
+                {
+                    "id": "62b8132f02831715a",
+                    "text": "Super saiyan Dinh nhuyen 2222",
+                    "img": "some img url",
+                    "time": 60,
+                    "ans": [
+                        {
+                            "id": "62b8132f02831715a9fbaa7a",
+                            "text": "da!!!!",
+                            "isRight": true
+                        },
+                        {
+                            "id": "3123123213213123213",
+                            "text": "da!!!!",
+                            "isRight": true
+                        }
+                    ]
+                },
+                {
+                    "id": "222222",
+                    "text": "bla bla",
+                    "img": "some img url",
+                    "time": 60,
+                    "ans": [
+                        {
+                            "id": "1111",
+                            "text": "da!!!!",
+                            "isRight": true
+                        },
+                        {
+                            "id": "2222",
+                            "text": "da!!!!",
+                            "isRight": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
