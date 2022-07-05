@@ -19,38 +19,44 @@ GET 157.245.147.239:9090/v1/api/admin/quiz/62b8132f02831715a9fbaa7a
 {
     "_id": "62b8132f02831715a9fbaa7a",
     "quizImage": "path/to/image",
-    "questions": {
-        "1": {
+    "questions": [
+        {
+            "id": "62b8132f02831715a",
             "text": "Super saiyan Dinh nhuyen 2222",
             "img": "some img url",
             "time": 60,
-            "ans": {
-                "1": {
+            "ans": [
+                {
+                    "id": "62b8132f02831715a9fbaa7a",
                     "text": "da!!!!",
                     "isRight": true
                 },
-                "2": {
-                    "text": "da",
-                    "isRight": false
+                {
+                    "id": "3123123213213123213",
+                    "text": "da!!!!",
+                    "isRight": true
                 }
-            }
+            ]
         },
-        "2": {
-            "text": "Super saiyan",
+        {
+            "id": "222222",
+            "text": "bla bla",
             "img": "some img url",
             "time": 60,
-            "ans": {
-                "1": {
-                    "text": "da!!!",
+            "ans": [
+                {
+                    "id": "1111",
+                    "text": "da!!!!",
                     "isRight": true
                 },
-                "2": {
-                    "text": "net",
+                {
+                    "id": "2222",
+                    "text": "da!!!!",
                     "isRight": false
                 }
-            }
+            ]
         }
-    }
+    ]
 }
 
 # CREATE QUIZ 
@@ -59,39 +65,46 @@ POST 157.245.147.239:9090/v1/api/admin/quiz
 Bear "<token>"
 Request:
 {
+    "_id": "62b8132f02831715a9fbaa7a",
     "quizImage": "path/to/image",
-    "questions": {
-        "1": {
+    "questions": [
+        {
+            "id": "62b8132f02831715a",
             "text": "Super saiyan Dinh nhuyen 2222",
             "img": "some img url",
             "time": 60,
-            "ans": {
-                "1": {
+            "ans": [
+                {
+                    "id": "62b8132f02831715a9fbaa7a",
                     "text": "da!!!!",
                     "isRight": true
                 },
-                "2": {
-                    "text": "da",
-                    "isRight": false
+                {
+                    "id": "3123123213213123213",
+                    "text": "da!!!!",
+                    "isRight": true
                 }
-            }
+            ]
         },
-        "2": {
-            "text": "Super saiyan",
+        {
+            "id": "222222",
+            "text": "bla bla",
             "img": "some img url",
             "time": 60,
-            "ans": {
-                "1": {
-                    "text": "da!!!",
+            "ans": [
+                {
+                    "id": "1111",
+                    "text": "da!!!!",
                     "isRight": true
                 },
-                "2": {
-                    "text": "net",
+                {
+                    "id": "2222",
+                    "text": "da!!!!",
                     "isRight": false
                 }
-            }
+            ]
         }
-    }
+    ]
 }
 
 Response:
@@ -105,40 +118,46 @@ POST 157.245.147.239:9090/v1/api/admin/quiz
 Bear "<token>"
 Request:
 {
-    "_id": "id" // Luy y, nho them id de Update
+    "_id": "62b8132f02831715a9fbaa7a", // nho them _id de update
     "quizImage": "path/to/image",
-    "questions": {
-        "1": {
+    "questions": [
+        {
+            "id": "62b8132f02831715a",
             "text": "Super saiyan Dinh nhuyen 2222",
             "img": "some img url",
             "time": 60,
-            "ans": {
-                "1": {
+            "ans": [
+                {
+                    "id": "62b8132f02831715a9fbaa7a",
                     "text": "da!!!!",
                     "isRight": true
                 },
-                "2": {
-                    "text": "da",
-                    "isRight": false
+                {
+                    "id": "3123123213213123213",
+                    "text": "da!!!!",
+                    "isRight": true
                 }
-            }
+            ]
         },
-        "2": {
-            "text": "Super saiyan",
+        {
+            "id": "222222",
+            "text": "bla bla",
             "img": "some img url",
             "time": 60,
-            "ans": {
-                "1": {
-                    "text": "da!!!",
+            "ans": [
+                {
+                    "id": "1111",
+                    "text": "da!!!!",
                     "isRight": true
                 },
-                "2": {
-                    "text": "net",
+                {
+                    "id": "2222",
+                    "text": "da!!!!",
                     "isRight": false
                 }
-            }
+            ]
         }
-    }
+    ]
 }
 
 
