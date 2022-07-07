@@ -1,5 +1,5 @@
 # SIGN UP
-POST 157.245.147.239:8080/v1/user/register
+POST 157.245.147.239:80/v1/user/register
 {
     "email": "dinguyen",
     "password": "test",
@@ -7,14 +7,14 @@ POST 157.245.147.239:8080/v1/user/register
 }
 
 # SIGN IN
-POST 157.245.147.239:8080/v1/user/authenticate
+POST 157.245.147.239:80/v1/user/authenticate
 {
     "email": "dinguyen",
     "password": "test"
 }
 
 # GET QUIZ
-GET 157.245.147.239:9090/v1/api/admin/quiz/62b8132f02831715a9fbaa7a
+GET 157.245.147.239:80/v1/api/admin/quiz/62b8132f02831715a9fbaa7a
 // Vi' Du. response
 {
     "_id": "62b8132f02831715a9fbaa7a",
@@ -60,7 +60,7 @@ GET 157.245.147.239:9090/v1/api/admin/quiz/62b8132f02831715a9fbaa7a
 }
 
 # CREATE QUIZ 
-POST 157.245.147.239:9090/v1/api/admin/quiz
+POST 157.245.147.239:80/v1/api/admin/quiz
 
 Bear "<token>"
 Request:
@@ -113,7 +113,7 @@ Response:
 }
 
 # UPDATE QUIZ
-POST 157.245.147.239:9090/v1/api/admin/quiz
+POST 157.245.147.239:80/v1/api/admin/quiz
 
 Bear "<token>"
 Request:
@@ -168,7 +168,7 @@ Response:
 
 
 # GET ALL QUIZ By USER
-GET 157.245.147.239:9090/v1/api/admin/quiz-all
+GET 157.245.147.239:80/v1/api/admin/quiz-all
 request: 
 response: 
 {
